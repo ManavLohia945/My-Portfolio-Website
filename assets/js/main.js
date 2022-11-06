@@ -216,7 +216,7 @@ function validate(){
             emptyerror();
         }
         else{
-            sendmail(name.value,email.value);
+            sendmail(name.value,email.value,mssg.value);
             success();
         }
     });
@@ -224,11 +224,12 @@ function validate(){
 
 validate();
 
-function sendmail(name,email){
-    emailjs.send("service_gvs5yji","template_z92oiul",{
+function sendmail(name,email,mssg){
+    emailjs.send("service_gvs5yji","template_a092tki",{
         from_name:"Manav",
         reply_to:name,
         to_name: email,
+        message:mssg,
         
         });
 }
